@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "jakub017/laravel-consent",
+    "description": "Lightweight Laravel package for managing GDPR consents. ",
     "keywords": [
-        ":vendor_name",
+        "jakub017",
         "laravel",
-        ":package_slug"
+        "laravel-consent"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/jakub017/laravel-consent",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Jakub Lipiński",
+            "email": "kontakt@webcrafts.pl",
             "role": "Developer"
         }
     ],
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "Jakub017\\LaravelConsent\\": "src/",
+            "Jakub017\\LaravelConsent\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/",
+            "Jakub017\\LaravelConsent\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -63,10 +63,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Jakub017\\LaravelConsent\\LaravelConsentServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "LaravelConsent": "Jakub017\\LaravelConsent\\Facades\\LaravelConsent"
             }
         }
     },
