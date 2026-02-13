@@ -11,8 +11,8 @@ class LaravelConsent
         // Check if the cookie exists
         $cookieData = request()->cookie('laravel_consent');
 
-       // If the cookie exists, transform the JSON string into a PHP array
-        if($cookieData) {
+        // If the cookie exists, transform the JSON string into a PHP array
+        if ($cookieData) {
             $this->consents = json_decode($cookieData, true) ?? [];
         }
     }
@@ -31,17 +31,17 @@ class LaravelConsent
     {
         $this->consents[$category] = true;
 
-        /* 
+        /*
         Save the consents to a cookie, encode it to a strin in a JSON format for JS requirements
         Store consent for 1 year
         */
-        cookie()->queue('laravel_consent', json_encode($this->consents), config('laravel-consent.cookie_default_time', 525600)); 
+        cookie()->queue('laravel_consent', json_encode($this->consents), config('laravel-consent.cookie_default_time', 525600));
     }
 
     public function acceptAll(array $categories): void
     {
         // Set every consent category for true
-        foreach($categories as $category) {
+        foreach ($categories as $category) {
             $this->consents[$category] = true;
         }
 
@@ -51,7 +51,7 @@ class LaravelConsent
 
     public function checkConsent(string $category): bool
     {
-        if($category === 'necessary') {
+        if ($category === 'necessary') {
             return true;
         }
 
@@ -64,6 +64,6 @@ class LaravelConsent
         unset($this->consents[$category]);
 
         // Send updated cookie without the consent which user has removed
-        cookie()->queue('laravel_consent', json_encode($this->consents),config('laravel-consent.cookie_default_time', 525600));
+        cookie()->queue('laravel_consent', json_encode($this->consents), config('laravel-consent.cookie_default_time', 525600));
     }
 }
