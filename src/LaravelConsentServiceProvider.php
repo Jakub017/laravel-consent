@@ -2,9 +2,9 @@
 
 namespace Jakub017\LaravelConsent;
 
+use Jakub017\LaravelConsent\Commands\LaravelConsentCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Jakub017\LaravelConsent\Commands\LaravelConsentCommand;
 
 class LaravelConsentServiceProvider extends PackageServiceProvider
 {
@@ -25,8 +25,8 @@ class LaravelConsentServiceProvider extends PackageServiceProvider
 
     public function packageRegistered(): void
     {
-        $this->app->singleton(LaravelConsent::class, function() {
-            return new LaravelConsent();
+        $this->app->singleton(LaravelConsent::class, function () {
+            return new LaravelConsent;
         });
 
         $this->app->alias(LaravelConsent::class, 'laravel-consent');

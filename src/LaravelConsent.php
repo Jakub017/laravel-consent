@@ -2,7 +2,8 @@
 
 namespace Jakub017\LaravelConsent;
 
-class LaravelConsent {
+class LaravelConsent
+{
     protected array $consents = [];
 
     public function __construct()

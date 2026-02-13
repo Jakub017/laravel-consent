@@ -3,8 +3,8 @@
 namespace Jakub017\LaravelConsent\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use Jakub017\LaravelConsent\LaravelConsentServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
